@@ -3,7 +3,11 @@ Your project's description...
 
 ## Environments
 - Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Live: https://main--{repo}--{owner}.hlx.live/ 
+
+My testing site:
+- https://main--franklin-starter--andreialexandruparaschiv.hlx.page
+- https://main--franklin-starter--andreialexandruparaschiv.hlx.live
 
 ## Installation
 
