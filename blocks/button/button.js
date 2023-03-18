@@ -8,7 +8,7 @@ button.addEventListener('click', () => {
     headers: {
       accept: '*/*',
       'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7',
-      authorization: 'token',
+      authorization: 'tokenA',
       'cache-control': 'no-cache',
       'content-type': 'application/json',
       pragma: 'no-cache',
