@@ -15,6 +15,11 @@ import {
   headersDuplicateJourney,
 } from './data.js';
 
+const resultDiv = document.createElement('pre');
+resultDiv.id = 'result';
+const body = document.querySelector('body');
+body.appendChild(resultDiv);
+
 // select button by hyperlink
 const button = document.querySelector('a');
 // remove hyperlink
@@ -29,8 +34,10 @@ button.addEventListener('click', () => {
     credentials: 'include',
   }).then((response) => {
     if (response.ok) {
+      resultDiv.innerText = 'The duplicate operation is Successful';
       console.log('Duplication completed');
     } else {
+      resultDiv.innerText = 'The duplicate has Failed';
       console.error('Failed to duplicate journey');
     }
   })
@@ -39,10 +46,6 @@ button.addEventListener('click', () => {
     });
 });
 
-const resultDiv = document.createElement('pre');
-resultDiv.id = 'result';
-const body = document.querySelector('body');
-body.appendChild(resultDiv);
 const button1 = document.querySelector('a.button:any-link');
 // remove hyperlink
 button1.removeAttribute('href');
