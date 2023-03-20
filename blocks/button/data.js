@@ -1,4 +1,4 @@
-export const tokenAJO = 'token';
+export const tokenAJO = 'Bearer eyJhbGciOiJSUzI1NiIsIng1dSI6Imltc19uYTEta2V5LWF0LTEuY2VyIiwia2lkIjoiaW1zX25hMS1rZXktYXQtMSIsIml0dCI6ImF0In0.eyJpZCI6IjE2NzkzMDk2MTIzMzhfMjUyMWMxOWMtYmM2ZS00ZjY4LThkNDYtYzI0NTk0OTUzNWFiX2V3MSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJjbGllbnRfaWQiOiJ2b3lhZ2VyIiwidXNlcl9pZCI6Ijg0QUExRjgwNjMxQzMzREEwQTQ5NUM3REA3ZWViMjBmODYzMWMwY2I3NDk1YzA2LmUiLCJzdGF0ZSI6IntcInNlc3Npb25cIjpcImh0dHBzOi8vaW1zLW5hMS5hZG9iZWxvZ2luLmNvbS9pbXMvc2Vzc2lvbi92MS9abUpsT1RjMU16Y3ROV1kzTkMwMFl6UmxMV0prTW1JdE5qRXlOemM1TTJZek0yTXpMUzFETjBVd01UQTBNalUwT0RsRk4wVkRNRUUwUXprNFFUUkFZV1J2WW1VdVkyOXRcIn0iLCJhcyI6Imltcy1uYTEiLCJhYV9pZCI6IkM3RTAxMDQyNTQ4OUU3RUMwQTRDOThBNEBhZG9iZS5jb20iLCJjdHAiOjAsImZnIjoiWEpJTzNRQTZYUE43TVA0S0dNUVYzN1FBTEE9PT09PT0iLCJzaWQiOiIxNjc4Nzg5NjQ2NzYzXzc3MzJmZmVlLTI2YmItNGQ1MC05ZmEzLTBkNjA0YTM2MTQxZF91ZTEiLCJtb2kiOiJiYzM0OTZkMiIsInBiYSI6Ik1lZFNlY05vRVYsTG93U2VjIiwiZXhwaXJlc19pbiI6Ijg2NDAwMDAwIiwic2NvcGUiOiJBZG9iZUlELG9wZW5pZCxhZGRpdGlvbmFsX2luZm8ucHJvamVjdGVkUHJvZHVjdENvbnRleHQscmVhZF9vcmdhbml6YXRpb25zIiwiY3JlYXRlZF9hdCI6IjE2NzkzMDk2MTIzMzgifQ.er0tY7jgTlrJUBrw66I4v11bptHpotjnmAIjM8n4LYI4vlbnPN-OWkxRaTc9-g60E7chaLJrYikkHjEfExqm_LOIj7-RAO6ewpOlj3uFNuMsGnmwX8OKE7HOQ590aUnytdbGXpHE-IyOde1e4zu8lJDDuvUbw0c-yZlAtHuTkJVlsYz9dPdMgJYiu38Exua_X66od_1YH1aGlYOT7Ci2v7XmbGZbKdfkczE-V6KLReQzvBvEXoCWqMZZR5GzEN_fwTVB5gdMd4OhdoXDswJbiDKsH_LJPa6jaoelhzOHtOHETHqZfyyinJwnjO6HaZGpm9NFEXefJBEFpS7np1RV0g';
 
 /* ------------------------------  POST  DUPLICATE JOURNEY ----------------------------- */
 export const duplicateJourney = 'https://journey-private.adobe.io/authoring/metadata/resource/duplicate';
@@ -4334,7 +4334,6 @@ export const dataRM = {
 };
 
 /* ------------------------------  GET RETRIEVE EMAIL VARIANT ----------------------------- */
-export const urlEmailVariant = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef';
 export const headersEmailVariant = {
   accept: '*/*',
   Authorization: tokenAJO,
@@ -4347,7 +4346,6 @@ export const headersEmailVariant = {
 };
 
 /* ------------------------------ GET RETRIEVE EMAIL VARIANT  ETAG----------------------------- */
-export const urlVariantEtag = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b';
 export const headersVariantEtag = {
   accept: '*/*',
   Authorization: tokenAJO,
@@ -4360,16 +4358,15 @@ export const headersVariantEtag = {
 };
 /* ------------------------------ PUT UPDATE EMAIL SUBJECT AND CONTENT--------------------------- */
 // button5: email content, change name,subject and html
-export const urlEmailUpdate = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b';
+
 export const emailContent = {
-  variantId: '7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b',
-  name: 'Hello Andrei134331 API Testing',
-  subject: 'Hello Andrei151 API Testing ',
+  name: 'Hello AndreiEXPORT API Testing',
+  subject: 'Hello AndreiEXPORT API Testing ',
   html: {
-    body: '<html>Hello Andre151 API Testing</html>',
+    body: '<html>Hello AndreiEXPORT API Testing</html>',
   },
   text: {
-    body: 'Hello Andrei155 API Testing',
+    body: 'Hello AndreiEXPORT API Testing',
     syncFromHtml: true,
   },
   editorContext: {
@@ -4377,24 +4374,4 @@ export const emailContent = {
     isTextSynchronized: true,
     authoringMode: 'default',
   },
-};
-// button5: etag to update the email subject and it's content
-export const etagVariant = '2d00ef65-0000-0200-0000-64188ed30000';
-
-export const headersEmailUpdate = {
-  Accept: '*/*',
-  accept: 'aplication/json',
-  authorization: tokenAJO,
-  'Cache-Control': 'no-cache',
-  Connection: 'keep-alive',
-  'content-type': 'application/vnd.adobe.cjm.variant.v1+json',
-  DNT: '1',
-  Pragma: 'no-cache',
-  'Sec-Fetch-Dest': 'empty',
-  'Sec-Fetch-Mode': 'cors',
-  'Sec-Fetch-Site': 'cross-site',
-  'x-api-key': 'aem-outbound-marketing',
-  'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
-  'x-sandbox-name': 'prod',
-  'if-match': JSON.stringify(etagVariant),
 };
