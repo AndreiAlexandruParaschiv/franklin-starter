@@ -1,4 +1,4 @@
-export const tokenAJO = 'tokenAJO';
+export const tokenAJO = 'token';
 
 /* ------------------------------  POST  DUPLICATE JOURNEY ----------------------------- */
 export const duplicateJourney = 'https://journey-private.adobe.io/authoring/metadata/resource/duplicate';
@@ -15,7 +15,7 @@ export const headersDuplicateJourney = {
 };
 
 /* ------------------------------  GET  RETRIEVE JOURNEY/EMAIL ID ----------------------------- */
-
+export const getJourney = 'https://journey-private.adobe.io/authoring/journeyVersions/';
 export const headersJourneyEmailID = {
   accept: '*/*',
   'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7',
@@ -34,9 +34,9 @@ export const headersJourneyEmailID = {
   'x-vyg-query-pagesize': '30',
   'x-vyg-query-sorts': 'W3siZGlyZWN0aW9uIjoiZGVzY2VuZGluZyIsImZpZWxkcyI6WyJtZXRhZGF0YS5jcmVhdGVkQXQiXX1d',
 };
-export const getJourney = 'https://journey-private.adobe.io/authoring/journeyVersions/';
 
 /* ------------------------------  PUT RENAME JOURNEY ----------------------------- */
+export const urlRename = 'https://journey-private.adobe.io/authoring/journeyVersions/d678d8ba-15df-421e-a5e1-c0b35b894a8f';
 export const headersRename = {
   Accept: '*/*',
   'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7',
@@ -54,12 +54,10 @@ export const headersRename = {
   'x-sandbox-name': 'prod',
 };
 
-export const urlRename = 'https://journey-private.adobe.io/authoring/journeyVersions/d678d8ba-15df-421e-a5e1-c0b35b894a8f';
-// button2: rename journey and keep the same data
 // eslint-disable-next-line import/prefer-default-export
 export const dataRM = {
   uid: 'd678d8ba-15df-421e-a5e1-c0b35b894a8f',
-  name: 'RealMadrid_postmatch_newsletter_13Iulie',
+  name: 'RealMadrid_postmatch_newsletter_143Iulie',
   journey: 'b1c3380c-542d-4e97-af8c-1641dc4eee4e',
   journeyVersion: '1.0',
   state: 'updated',
@@ -4336,6 +4334,7 @@ export const dataRM = {
 };
 
 /* ------------------------------  GET RETRIEVE EMAIL VARIANT ----------------------------- */
+export const urlEmailVariant = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef';
 export const headersEmailVariant = {
   accept: '*/*',
   Authorization: tokenAJO,
@@ -4346,7 +4345,6 @@ export const headersEmailVariant = {
   'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
   'x-sandbox-name': 'prod',
 };
-export const urlEmailVariant = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef';
 
 /* ------------------------------ GET RETRIEVE EMAIL VARIANT  ETAG----------------------------- */
 export const urlVariantEtag = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b';
@@ -4356,21 +4354,22 @@ export const headersVariantEtag = {
   'cache-control': 'no-cache',
   'content-type': 'application/json',
   pragma: 'no-cache',
-  'x-api-key': 'voyager',
+  'x-api-key': 'aem-outbound-marketing',
   'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
   'x-sandbox-name': 'prod',
 };
 /* ------------------------------ PUT UPDATE EMAIL SUBJECT AND CONTENT--------------------------- */
-// button5: email content
+// button5: email content, change name,subject and html
+export const urlEmailUpdate = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b';
 export const emailContent = {
   variantId: '7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b',
-  name: 'Hello Andrei133 API Testing',
-  subject: 'Hello Andrei133 API Testing ',
+  name: 'Hello Andrei134331 API Testing',
+  subject: 'Hello Andrei151 API Testing ',
   html: {
-    body: '<html>Hello Andrei133 API Testing</html>',
+    body: '<html>Hello Andre151 API Testing</html>',
   },
   text: {
-    body: 'Hello Andrei133 API Testing',
+    body: 'Hello Andrei155 API Testing',
     syncFromHtml: true,
   },
   editorContext: {
@@ -4380,8 +4379,8 @@ export const emailContent = {
   },
 };
 // button5: etag to update the email subject and it's content
-export const etagVariant = "2c007857-0000-0200-0000-641851190000";
-export const urlEmailUpdate = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b';
+export const etagVariant = '2d00ef65-0000-0200-0000-64188ed30000';
+
 export const headersEmailUpdate = {
   Accept: '*/*',
   accept: 'aplication/json',
@@ -4394,7 +4393,7 @@ export const headersEmailUpdate = {
   'Sec-Fetch-Dest': 'empty',
   'Sec-Fetch-Mode': 'cors',
   'Sec-Fetch-Site': 'cross-site',
-  'x-api-key': 'voyager',
+  'x-api-key': 'aem-outbound-marketing',
   'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
   'x-sandbox-name': 'prod',
   'if-match': JSON.stringify(etagVariant),

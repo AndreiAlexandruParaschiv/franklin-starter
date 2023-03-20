@@ -113,6 +113,7 @@ button4.addEventListener('click', () => {
       const etag = response.headers.get('ETag');
       return response.json().then(() => {
         resultDiv.innerText = `ETag: ${etag}`;
+        console.log(`ETag: ${etag}`);
       });
     });
 });
@@ -126,8 +127,16 @@ button5.addEventListener('click', () => {
     headers: headersEmailUpdate,
     body: JSON.stringify(emailContent),
   })
-    .then((response) => response.json())
-  // eslint-disable-next-line no-shadow
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
+    .then((response) => {
+      if (response.ok) {
+        resultDiv.innerText = 'Update completed';
+        console.log('Update completed');
+      } else {
+        resultDiv.innerText = 'Update Failed';
+        console.error('Update Failed');
+      }
+    })
+    .catch((error) => {
+      console.error('Update Failed:', error);
+    });
 });
