@@ -1,5 +1,5 @@
 import {
-  data, data1, etagVariant, tokenAJO,
+  data, emailContent, tokenAJO, headersEmailUpdate, urlEmailUpdate,
 } from './data.js';
 
 // select button by hyperlink
@@ -156,28 +156,12 @@ const button5 = document.querySelector('a.button:any-link');
 // remove hyperlink
 button5.removeAttribute('href');
 button5.addEventListener('click', () => {
-  // set the journeyId
-  fetch('https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b', {
+  fetch(urlEmailUpdate, {
     method: 'PUT',
-    headers: {
-      Accept: '*/*',
-      accept: 'aplication/json',
-      authorization: tokenAJO,
-      'Cache-Control': 'no-cache',
-      Connection: 'keep-alive',
-      'content-type': 'application/vnd.adobe.cjm.variant.v1+json',
-      DNT: '1',
-      Pragma: 'no-cache',
-      'Sec-Fetch-Dest': 'empty',
-      'Sec-Fetch-Mode': 'cors',
-      'Sec-Fetch-Site': 'cross-site',
-      'x-api-key': 'voyager',
-      'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
-      'x-sandbox-name': 'prod',
-      'if-match': JSON.stringify(etagVariant),
-    },
-    body: JSON.stringify(data1),
-  }).then((response) => response.json())
+    headers: headersEmailUpdate,
+    body: JSON.stringify(emailContent),
+  })
+    .then((response) => response.json())
   // eslint-disable-next-line no-shadow
     .then((data) => console.log(data))
     .catch((error) => console.error(error));

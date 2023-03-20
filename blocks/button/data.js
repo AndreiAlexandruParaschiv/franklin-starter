@@ -4280,16 +4280,17 @@ export const data = {
   authoringFormatVersion: '1.0',
 };
 
+/* UPDATE EMAIL SUBJECT AND CONTENT */
 // button5: email content
-export const data1 = {
+export const emailContent = {
   variantId: '7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b',
-  name: 'Hello Andrei13 API Testing',
-  subject: 'Hello Andrei13 API Testing ',
+  name: 'Hello Andrei133 API Testing',
+  subject: 'Hello Andrei133 API Testing ',
   html: {
-    body: '<html>Hello Andrei13 API Testing</html>',
+    body: '<html>Hello Andrei133 API Testing</html>',
   },
   text: {
-    body: 'Hello Andrei13 API Testing',
+    body: 'Hello Andrei133 API Testing',
     syncFromHtml: true,
   },
   editorContext: {
@@ -4300,4 +4301,22 @@ export const data1 = {
 };
 
 // button5: etag to update the email subject and it's content
-export const etagVariant = "2c00604e-0000-0200-0000-64184f3c0000";
+export const etagVariant = "2c007857-0000-0200-0000-641851190000";
+export const urlEmailUpdate = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b';
+export const headersEmailUpdate = {
+  Accept: '*/*',
+  accept: 'aplication/json',
+  authorization: tokenAJO,
+  'Cache-Control': 'no-cache',
+  Connection: 'keep-alive',
+  'content-type': 'application/vnd.adobe.cjm.variant.v1+json',
+  DNT: '1',
+  Pragma: 'no-cache',
+  'Sec-Fetch-Dest': 'empty',
+  'Sec-Fetch-Mode': 'cors',
+  'Sec-Fetch-Site': 'cross-site',
+  'x-api-key': 'voyager',
+  'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
+  'x-sandbox-name': 'prod',
+  'if-match': JSON.stringify(etagVariant),
+};
