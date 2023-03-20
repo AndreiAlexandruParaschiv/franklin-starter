@@ -1,8 +1,63 @@
-export const tokenAJO = 'tokenAJO';
+export const tokenAJO = 'Bearer eyJhbGciOiJSUzI1NiIsIng1dSI6Imltc19uYTEta2V5LWF0LTEuY2VyIiwia2lkIjoiaW1zX25hMS1rZXktYXQtMSIsIml0dCI6ImF0In0.eyJpZCI6IjE2NzkzMDk2MTIzMzhfMjUyMWMxOWMtYmM2ZS00ZjY4LThkNDYtYzI0NTk0OTUzNWFiX2V3MSIsInR5cGUiOiJhY2Nlc3NfdG9rZW4iLCJjbGllbnRfaWQiOiJ2b3lhZ2VyIiwidXNlcl9pZCI6Ijg0QUExRjgwNjMxQzMzREEwQTQ5NUM3REA3ZWViMjBmODYzMWMwY2I3NDk1YzA2LmUiLCJzdGF0ZSI6IntcInNlc3Npb25cIjpcImh0dHBzOi8vaW1zLW5hMS5hZG9iZWxvZ2luLmNvbS9pbXMvc2Vzc2lvbi92MS9abUpsT1RjMU16Y3ROV1kzTkMwMFl6UmxMV0prTW1JdE5qRXlOemM1TTJZek0yTXpMUzFETjBVd01UQTBNalUwT0RsRk4wVkRNRUUwUXprNFFUUkFZV1J2WW1VdVkyOXRcIn0iLCJhcyI6Imltcy1uYTEiLCJhYV9pZCI6IkM3RTAxMDQyNTQ4OUU3RUMwQTRDOThBNEBhZG9iZS5jb20iLCJjdHAiOjAsImZnIjoiWEpJTzNRQTZYUE43TVA0S0dNUVYzN1FBTEE9PT09PT0iLCJzaWQiOiIxNjc4Nzg5NjQ2NzYzXzc3MzJmZmVlLTI2YmItNGQ1MC05ZmEzLTBkNjA0YTM2MTQxZF91ZTEiLCJtb2kiOiJiYzM0OTZkMiIsInBiYSI6Ik1lZFNlY05vRVYsTG93U2VjIiwiZXhwaXJlc19pbiI6Ijg2NDAwMDAwIiwic2NvcGUiOiJBZG9iZUlELG9wZW5pZCxhZGRpdGlvbmFsX2luZm8ucHJvamVjdGVkUHJvZHVjdENvbnRleHQscmVhZF9vcmdhbml6YXRpb25zIiwiY3JlYXRlZF9hdCI6IjE2NzkzMDk2MTIzMzgifQ.er0tY7jgTlrJUBrw66I4v11bptHpotjnmAIjM8n4LYI4vlbnPN-OWkxRaTc9-g60E7chaLJrYikkHjEfExqm_LOIj7-RAO6ewpOlj3uFNuMsGnmwX8OKE7HOQ590aUnytdbGXpHE-IyOde1e4zu8lJDDuvUbw0c-yZlAtHuTkJVlsYz9dPdMgJYiu38Exua_X66od_1YH1aGlYOT7Ci2v7XmbGZbKdfkczE-V6KLReQzvBvEXoCWqMZZR5GzEN_fwTVB5gdMd4OhdoXDswJbiDKsH_LJPa6jaoelhzOHtOHETHqZfyyinJwnjO6HaZGpm9NFEXefJBEFpS7np1RV0g';
 
+/* ------------------------------  POST  DUPLICATE JOURNEY ----------------------------- */
+export const duplicateJourney = 'https://journey-private.adobe.io/authoring/metadata/resource/duplicate';
+export const headersDuplicateJourney = {
+  accept: '*/*',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7',
+  authorization: tokenAJO,
+  'cache-control': 'no-cache',
+  'content-type': 'application/json',
+  pragma: 'no-cache',
+  'x-api-key': 'voyager_ui',
+  'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
+  'x-sandbox-name': 'prod',
+};
+
+/* ------------------------------  GET  RETRIEVE JOURNEY/EMAIL ID ----------------------------- */
+
+export const headersJourneyEmailID = {
+  accept: '*/*',
+  'accept-language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7',
+  authorization: tokenAJO,
+  'cache-control': 'no-cache',
+  'content-type': 'application/json',
+  pragma: 'no-cache',
+  'sec-fetch-dest': 'empty',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-site': 'cross-site',
+  'x-api-key': 'voyager_ui',
+  'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
+  'x-sandbox-name': 'prod',
+  'x-vyg-query-filters': 'eyJmdW5jdGlvbiI6Im9yIiwidHlwZSI6ImZ1bmN0aW9uIiwiYXJncyI6W3siZnVuY3Rpb24iOiJjb250YWluIiwidHlwZSI6ImZ1bmN0aW9uIiwiYXJncyI6W3siZGF0YVR5cGUiOiJzdHJpbmciLCJ0eXBlIjoiY29uc3RhbnQiLCJ2YWx1ZSI6Im5hbWUifSx7ImRhdGFUeXBlIjoic3RyaW5nIiwidHlwZSI6ImNvbnN0YW50IiwidmFsdWUiOiJSZWFsTWFkcmlkIn0seyJkYXRhVHlwZSI6ImJvb2xlYW4iLCJ0eXBlIjoiY29uc3RhbnQiLCJ2YWx1ZSI6dHJ1ZX1dfSx7ImZ1bmN0aW9uIjoiY29udGFpbiIsInR5cGUiOiJmdW5jdGlvbiIsImFyZ3MiOlt7ImRhdGFUeXBlIjoic3RyaW5nIiwidHlwZSI6ImNvbnN0YW50IiwidmFsdWUiOiJkZXNjcmlwdGlvbiJ9LHsiZGF0YVR5cGUiOiJzdHJpbmciLCJ0eXBlIjoiY29uc3RhbnQiLCJ2YWx1ZSI6IlJlYWxNYWRyaWQifSx7ImRhdGFUeXBlIjoiYm9vbGVhbiIsInR5cGUiOiJjb25zdGFudCIsInZhbHVlIjp0cnVlfV19XX0=',
+  'x-vyg-query-page': '0',
+  'x-vyg-query-pagesize': '30',
+  'x-vyg-query-sorts': 'W3siZGlyZWN0aW9uIjoiZGVzY2VuZGluZyIsImZpZWxkcyI6WyJtZXRhZGF0YS5jcmVhdGVkQXQiXX1d',
+};
+export const getJourney = 'https://journey-private.adobe.io/authoring/journeyVersions/';
+
+/* ------------------------------  PUT RENAME JOURNEY ----------------------------- */
+export const headersRename = {
+  Accept: '*/*',
+  'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8,ro;q=0.7',
+  authorization: tokenAJO,
+  'Cache-Control': 'no-cache',
+  Connection: 'keep-alive',
+  'Content-Type': 'application/json',
+  DNT: '1',
+  Pragma: 'no-cache',
+  'Sec-Fetch-Dest': 'empty',
+  'Sec-Fetch-Mode': 'cors',
+  'Sec-Fetch-Site': 'cross-site',
+  'x-api-key': 'voyager_ui',
+  'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
+  'x-sandbox-name': 'prod',
+};
+
+export const urlRename = 'https://journey-private.adobe.io/authoring/journeyVersions/d678d8ba-15df-421e-a5e1-c0b35b894a8f';
 // button2: rename journey and keep the same data
 // eslint-disable-next-line import/prefer-default-export
-export const data = {
+export const dataRM = {
   uid: 'd678d8ba-15df-421e-a5e1-c0b35b894a8f',
   name: 'RealMadrid_postmatch_newsletter_13Iulie',
   journey: 'b1c3380c-542d-4e97-af8c-1641dc4eee4e',
@@ -4280,7 +4335,32 @@ export const data = {
   authoringFormatVersion: '1.0',
 };
 
-/* UPDATE EMAIL SUBJECT AND CONTENT */
+/* ------------------------------  GET RETRIEVE EMAIL VARIANT ----------------------------- */
+export const headersEmailVariant = {
+  accept: '*/*',
+  Authorization: tokenAJO,
+  'cache-control': 'no-cache',
+  'content-type': 'application/json',
+  pragma: 'no-cache',
+  'x-api-key': 'voyager',
+  'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
+  'x-sandbox-name': 'prod',
+};
+export const urlEmailVariant = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef';
+
+/* ------------------------------ GET RETRIEVE EMAIL VARIANT  ETAG----------------------------- */
+export const urlVariantEtag = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b';
+export const headersVariantEtag = {
+  accept: '*/*',
+  Authorization: tokenAJO,
+  'cache-control': 'no-cache',
+  'content-type': 'application/json',
+  pragma: 'no-cache',
+  'x-api-key': 'voyager',
+  'x-gw-ims-org-id': '908936ED5D35CC220A495CD4@AdobeOrg',
+  'x-sandbox-name': 'prod',
+};
+/* ------------------------------ PUT UPDATE EMAIL SUBJECT AND CONTENT--------------------------- */
 // button5: email content
 export const emailContent = {
   variantId: '7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b',
@@ -4299,7 +4379,6 @@ export const emailContent = {
     authoringMode: 'default',
   },
 };
-
 // button5: etag to update the email subject and it's content
 export const etagVariant = "2c007857-0000-0200-0000-641851190000";
 export const urlEmailUpdate = 'https://platform.adobe.io/journey/authoring/message/inline-messages/122d5669-bbca-4f6d-8e82-22068b200eef/email/variants/7b4a6bc1-3ff1-4e13-9f36-972fd55f0f8b';
