@@ -37,7 +37,7 @@ button.addEventListener('click', () => {
       resultDiv.innerText = 'The duplicate operation is Successful';
       console.log('Duplication completed');
     } else {
-      resultDiv.innerText = 'The duplicate has Failed';
+      resultDiv.innerText = 'The duplicate Failed';
       console.error('Failed to duplicate journey');
     }
   })
