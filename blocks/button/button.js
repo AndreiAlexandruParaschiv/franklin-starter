@@ -27,7 +27,16 @@ button.addEventListener('click', () => {
     method: 'POST',
     mode: 'cors',
     credentials: 'include',
-  });
+  }).then((response) => {
+    if (response.ok) {
+      console.log('Duplication completed');
+    } else {
+      console.error('Failed to duplicate journey');
+    }
+  })
+    .catch((error) => {
+      console.error('Error duplicating journey:', error);
+    });
 });
 
 const resultDiv = document.createElement('pre');
