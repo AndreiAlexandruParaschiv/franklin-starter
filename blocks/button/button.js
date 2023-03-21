@@ -2,9 +2,7 @@ import {
   emailContent,
   headersVariantEtag,
   headersEmailVariant,
-  dataRM,
   headersRename,
-  urlRename,
   headersJourneyEmailID,
   duplicateJourney,
   headersDuplicateJourney, tokenAJO,
@@ -15,14 +13,9 @@ resultDiv.id = 'result';
 const body = document.querySelector('body');
 body.appendChild(resultDiv);
 
-// select button by hyperlink
-const button = document.querySelector('a');
-// remove hyperlink
-button.removeAttribute('href');
-// add eventlisterner on click
 let journeyId = null;
-button.addEventListener('click', () => {
-  fetch(duplicateJourney, {
+function createDuplicate() {
+  return fetch(duplicateJourney, {
     headers: headersDuplicateJourney,
     body: '{"origUID":"2e4c364e-eb0c-41db-8cfa-28987013304b","type":"journeyVersion"}',
     method: 'POST',
@@ -38,14 +31,11 @@ button.addEventListener('click', () => {
       NodeEmailID: ${emailNode.uid}`;
       return Promise.resolve(journeyId);
     });
-});
+}
 
-const button1 = document.querySelector('a.button:any-link');
-
-// remove hyperlink
-button1.removeAttribute('href');
 let messageId = null;
-
+let bodyRename = null;
+let journeyName = null;
 function fetchMessageId() {
   return fetch(`https://journey-private.adobe.io/authoring/journeyVersions/${journeyId}`, {
     headers: headersJourneyEmailID,
@@ -58,37 +48,17 @@ function fetchMessageId() {
   })
     .then((response) => response.json())
     .then((json) => {
+      journeyName = JSON.stringify(json.result.name);
+      bodyRename = JSON.stringify(json.result);
       messageId = json.result.steps[4].action.messageId;
       resultDiv.innerText = `
+      journeyName: ${journeyName};
       EmailID: ${messageId}`;
       return Promise.resolve(messageId);
     });
 }
 
-button1.addEventListener('click', () => {
-  fetchMessageId();
-});
-
-const button2 = document.querySelector('a.button:any-link');
-// remove hyperlink
-button2.removeAttribute('href');
-button2.addEventListener('click', () => {
-  // set the journeyId
-  fetch(urlRename, {
-    method: 'PUT',
-    headers: headersRename,
-    body: JSON.stringify(dataRM),
-  }).then((response) => response.json())
-  // eslint-disable-next-line no-shadow
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
-});
-
 let variantId = null;
-const button3 = document.querySelector('a.button:any-link');
-// remove hyperlink
-button3.removeAttribute('href');
-
 function fetchVariantId() {
   return fetch(`https://platform.adobe.io/journey/authoring/message/inline-messages/${messageId}`, {
     headers: headersEmailVariant,
@@ -102,16 +72,7 @@ function fetchVariantId() {
     }));
 }
 
-button3.addEventListener('click', () => {
-  // Retrieve email variant
-  fetchVariantId();
-});
-
-const button4 = document.querySelector('a.button:any-link');
 let etag = null;
-// remove hyperlink
-button4.removeAttribute('href');
-
 function fetchEtag() {
   return fetch(`https://platform.adobe.io/journey/authoring/message/inline-messages/${messageId}/email/variants/${variantId}`, {
     headers: headersVariantEtag,
@@ -126,15 +87,6 @@ function fetchEtag() {
       });
     });
 }
-
-button4.addEventListener('click', () => {
-  // Retrieve email variant etag
-  fetchEtag();
-});
-
-const button5 = document.querySelector('a.button:any-link');
-// remove hyperlink
-button5.removeAttribute('href');
 
 function updateEmail() {
   return fetch(`https://platform.adobe.io/journey/authoring/message/inline-messages/${messageId}/email/variants/${variantId}`, {
@@ -160,7 +112,7 @@ function updateEmail() {
   })
     .then((response) => {
       if (response.ok) {
-        resultDiv.innerText = 'Update completed';
+        resultDiv.innerText = 'Update completed!';
         console.log('Update completed');
         return Promise.resolve('');
       }
@@ -176,13 +128,52 @@ function updateEmail() {
     });
 }
 
-button5.addEventListener('click', () => {
-  updateEmail();
+const button = document.querySelector('a');
+// remove hyperlink
+button.removeAttribute('href');
+button.addEventListener('click', () => {
+  createDuplicate().then(() => fetchMessageId()).then(() => fetchVariantId())
+    .then(() => fetchEtag())
+    .then(() => updateEmail());
 });
 
-const button6 = document.querySelector('a.button:any-link');
+const button1 = document.querySelector('a.button:any-link');
 // remove hyperlink
-button6.removeAttribute('href');
-button6.addEventListener('click', () => {
-  fetchMessageId().then(() => fetchVariantId()).then(() => fetchEtag()).then(() => updateEmail());
+button1.removeAttribute('href');
+
+function renameJourney(newName) {
+  // Convert the bodyRename JSON string back to an object
+  const journey = JSON.parse(bodyRename);
+
+  // Modify the name property of the object to the new name
+  journey.name = newName;
+
+  // Convert the modified object back to a JSON string
+  const updatedBody = JSON.stringify(journey);
+
+  return fetch(`https://journey-private.adobe.io/authoring/journeyVersions/${journeyId}`, {
+    method: 'PUT',
+    headers: headersRename,
+    body: updatedBody,
+  }).then((response) => {
+    if (response.ok) {
+      resultDiv.innerText = `Rename journey in ${newName} completed!`;
+      return Promise.resolve('');
+    }
+    resultDiv.innerText = 'Renamed Failed';
+    console.error('Renamed Failed');
+    // eslint-disable-next-line prefer-promise-reject-errors
+    return Promise.reject('');
+  })
+    .catch((error) => {
+      console.error('Renamed Failed:', error);
+      // eslint-disable-next-line prefer-promise-reject-errors
+      return Promise.reject('');
+    });
+}
+
+button1.addEventListener('click', () => {
+  const newName = 'AndreiAPI';
+  // set the journeyId
+  fetchMessageId().then(() => renameJourney(newName));
 });
