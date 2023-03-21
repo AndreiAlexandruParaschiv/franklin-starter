@@ -128,10 +128,6 @@ function updateEmail() {
     });
 }
 
-// const button1 = document.querySelector('a.button:any-link');
-// // remove hyperlink
-// button1.removeAttribute('href');
-
 function renameJourney(newName) {
   // Convert the bodyRename JSON string back to an object
   const journey = JSON.parse(bodyRename);
