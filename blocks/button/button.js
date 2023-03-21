@@ -128,18 +128,9 @@ function updateEmail() {
     });
 }
 
-const button = document.querySelector('a');
-// remove hyperlink
-button.removeAttribute('href');
-button.addEventListener('click', () => {
-  createDuplicate().then(() => fetchMessageId()).then(() => fetchVariantId())
-    .then(() => fetchEtag())
-    .then(() => updateEmail());
-});
-
-const button1 = document.querySelector('a.button:any-link');
-// remove hyperlink
-button1.removeAttribute('href');
+// const button1 = document.querySelector('a.button:any-link');
+// // remove hyperlink
+// button1.removeAttribute('href');
 
 function renameJourney(newName) {
   // Convert the bodyRename JSON string back to an object
@@ -172,8 +163,13 @@ function renameJourney(newName) {
     });
 }
 
-button1.addEventListener('click', () => {
-  const newName = 'AndreiAPI';
-  // set the journeyId
-  fetchMessageId().then(() => renameJourney(newName));
+const button = document.querySelector('a');
+// remove hyperlink
+button.removeAttribute('href');
+button.addEventListener('click', () => {
+  const newName = 'AndreiAPI12444';
+  createDuplicate().then(() => fetchMessageId()).then(() => fetchVariantId())
+    .then(() => fetchEtag())
+    .then(() => updateEmail())
+    .then(() => renameJourney(newName));
 });
