@@ -1,4 +1,4 @@
-export const tokenAJO = 'token';
+export const tokenAJO = 'Bearer token';
 
 /* ------------------------------  POST  DUPLICATE JOURNEY ----------------------------- */
 export const duplicateJourney = 'https://journey-private.adobe.io/authoring/metadata/resource/duplicate';
