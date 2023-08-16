@@ -1,0 +1,16 @@
+a {
+    font-family: 'Adobe Clean', Arial, sans-serif;
+    display: inline-block;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 2px solid transparent;
+    padding: 5px 30px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+    margin: 16px 0;
+    border-radius: 30px;
+}
