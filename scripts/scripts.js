@@ -122,3 +122,22 @@ async function loadPage() {
 }
 
 loadPage();
+
+
+const login = ({ detail }) => {
+  const sk = detail.data;
+  // your custom code from button.action goes here
+  window.console.log('login', sk);
+};
+
+const sk = document.querySelector('helix-sidekick');
+if (sk) {
+  // sidekick already loaded
+  sk.addEventListener('custom:login', login);
+} else {
+  // wait for sidekick to be loaded
+  document.addEventListener('sidekick-ready', () => {
+    document.querySelector('helix-sidekick')
+      .addEventListener('custom:login', login);
+  }, { once: true });
+}

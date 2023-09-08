@@ -2,14 +2,15 @@
     "project": "franklin-ims",
     "plugins": [
         {
-            "id": "duplicate-journey",
+            "id": "login",
             "title": "Login",
             "environments": [
                 "preview",
-                "admin"
+                "admin",
+                "dev"
             ],
-            "event": "duplicatejourney",
-            "url": "/tools/sidekick/index.html",
+            "event": "duplicatejourney2",
+            "url": "http://localhost:3000/tools/sidekick/login",
             "passConfig": true,
             "passReferrer": true,
             "isPalette": true,
