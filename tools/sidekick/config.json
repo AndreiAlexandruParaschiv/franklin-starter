@@ -1,0 +1,19 @@
+{
+    "project": "franklin-ims",
+    "plugins": [
+        {
+            "id": "duplicate-journey",
+            "title": "Login",
+            "environments": [
+                "preview",
+                "admin"
+            ],
+            "event": "duplicatejourney",
+            "url": "/tools/sidekick/index.html",
+            "passConfig": true,
+            "passReferrer": true,
+            "isPalette": true,
+            "paletteRect": "top: 54px; left: 5px; bottom: 5px; width: 340px; height: 200px; border-radius: var(--hlx-sk-button-border-radius); overflow: hidden; resize: both;"
+        }
+    ]
+}
