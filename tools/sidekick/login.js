@@ -1,3 +1,4 @@
+// import { AdobeIMS } from '@identity/imslib';
 
 window.console.log('File loaded: login.js');
 function executeLogin() {
@@ -52,6 +53,7 @@ const ims = {}
   // reader initial logged out experience
     window.console.log('Initializing IMS');
 
+  // const adobeIms = new AdobeIMS(imsConfig);  
   const adobeIms = window['adobeImsFactory'].createIMSLib(imsConfig);
   adobeIms.initialize(); 
 }
