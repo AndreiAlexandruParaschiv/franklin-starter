@@ -9,7 +9,7 @@
                 "admin",
                 "dev"
             ],
-            "event": "duplicatejourney2",
+            "event": "login",
             "url": "http://localhost:3000/tools/sidekick/login",
             "passConfig": true,
             "passReferrer": true,
