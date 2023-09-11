@@ -7,10 +7,11 @@
             "environments": [
                 "preview",
                 "admin",
-                "dev"
+                "dev",
+                "prod"
             ],
             "event": "login",
-            "url": "http://localhost:3000/tools/sidekick/login",
+            "url": "https://localhost.corp.adobe.com:3000/tools/sidekick/login",
             "passConfig": true,
             "passReferrer": true,
             "isPalette": true,

@@ -1,7 +1,7 @@
 
 window.console.log('File loaded: login.js');
 function executeLogin() {
-    window.console.log('Executing login.js');
+  window.console.log('Executing login.js');
 const ims = {}
   const imsConfig = {
     client_id: 'ad13336dbc26475d887a7350c024a2a7',
@@ -20,7 +20,7 @@ const ims = {}
       if (!adobeIms.getAccessToken()) {
         window.addEventListener('message', (ev) => {
             window.console.log('There is no acess token, waiting for message from modal', ev);
-          if (ev.origin !== 'https://245265-franklinexd-stage.adobeio-static.net') {
+          if (ev.origin !== 'https://main--franklin-starter--andreialexandruparaschiv.hlx.page') {
             window.console.log('Wrong origin', ev.origin);
             return;
           }
