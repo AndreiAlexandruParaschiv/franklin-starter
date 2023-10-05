@@ -11,7 +11,7 @@
                 "prod"
             ],
             "event": "login",
-            "url": "https://main--franklin-starter--andreialexandruparaschiv.hlx.page/",
+            "url": "https://localhost.corp.adobe.com/tools/sidekick/login",
             "passConfig": true,
             "passReferrer": true,
             "isPalette": true,
