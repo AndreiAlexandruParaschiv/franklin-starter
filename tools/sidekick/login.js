@@ -1,4 +1,4 @@
-// import { AdobeIMS } from '@identity/imslib';
+//import { AdobeIMS } from '@identity/imslib';
 
 window.console.log('File loaded: login.js');
 function executeLogin() {
@@ -6,6 +6,8 @@ function executeLogin() {
 const ims = {}
   const imsConfig = {
     client_id: 'ad13336dbc26475d887a7350c024a2a7',
+    //client-_id: 'franklin-ims-ajo',
+    // client_id: 'franklin-exd-ui-stg',
     scope: 'AdobeID,openid',
     locale: 'en_US',
     environment: 'stg1',
@@ -53,7 +55,7 @@ const ims = {}
   // reader initial logged out experience
     window.console.log('Initializing IMS');
 
-  // const adobeIms = new AdobeIMS(imsConfig);  
+  //const adobeIms = new AdobeIMS(imsConfig);  
   const adobeIms = window['adobeImsFactory'].createIMSLib(imsConfig);
   adobeIms.initialize(); 
 }
