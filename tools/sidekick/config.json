@@ -11,7 +11,7 @@
                 "prod"
             ],
             "event": "login",
-            "url": "/tools/sidekick/login",
+            "url": "https://localhost.corp.adobe.com/tools/sidekick/login",
             "passConfig": true,
             "passReferrer": true,
             "isPalette": true,
